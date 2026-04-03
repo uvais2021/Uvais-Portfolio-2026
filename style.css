@@ -114,7 +114,7 @@ nav.sticky {
   .menu-toggle span:last-child { margin-bottom: 0; }
   nav.nav-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   nav.nav-open .menu-toggle span:nth-child(2) { opacity: 0; }
-  nav.nav-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  nav.nav-open .menu-toggle span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
   /* Back to Top Button */
   .back-to-top {
     position: fixed;
