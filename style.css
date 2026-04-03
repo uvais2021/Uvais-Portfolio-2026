@@ -702,4 +702,5 @@ nav.sticky {
 
   @media (max-width:479px) {
         .contact-item{display: flex; flex-direction: column; text-align: center;}
+        .skills-grid{grid-template-columns: 1fr; gap: 0;}
   }
