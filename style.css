@@ -610,6 +610,113 @@ nav.sticky {
     50% { box-shadow: 0 0 0 6px rgba(58,191,110,0); }
   }
 
+   /* PROJECTS */
+  .projects-section {
+    padding: 8rem 4rem;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .projects-section .section-label { color: var(--gold); }
+  .projects-section .section-label::after { background: rgba(255,255,255,0.1); }
+  .projects-section .section-title { color: var(--paper); }
+  .projects-section .section-title .em { color: var(--gold); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 4rem;
+    background: rgba(255,255,255,0.04);
+  }
+  .project-card {
+    background: #0e0e0e;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .project-card:hover { background: #161616; }
+  .project-card::before {
+    content: attr(data-index);
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.025);
+    position: absolute;
+    bottom: -1rem;
+    right: 0.5rem;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .project-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .project-tag::before {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+    display: block;
+  }
+  .project-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .project-desc {
+    font-size: 0.78rem;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.5);
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+  .project-tech span {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(245,240,232,0.4);
+  }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: auto;
+  }
+  .project-link:hover { color: var(--gold); gap: 0.8rem; }
+  .project-link::after { content: '→'; }
+
+  @media (max-width: 900px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
   /* FOOTER */
   footer {
     padding: 2rem 4rem;
@@ -627,7 +734,7 @@ nav.sticky {
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition: opacity 0.7s ease, transform 0.7s ease background 0.3s ease;
   }
   .fade-in.visible {
     opacity: 1;
@@ -681,10 +788,9 @@ nav.sticky {
       font-size: 1.1rem;
       color: var(--ink);
     }
-    .nav-links a.btn-primary,
-    .nav-links a.btn-outline {
-      width: 100%;
-      text-align: center;
+    .nav-links a.btn-primary, .nav-links a.btn-outline {
+        text-align: center;
+        display: inline-flex;
     }
 
     .hero { grid-template-columns: 1fr; }
@@ -695,7 +801,7 @@ nav.sticky {
     .exp-meta { position: static; }
     .edu-grid { grid-template-columns: 1fr; }
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .skills-section, .experience-section, .education-section, .contact-section { padding: 5rem 2rem; }
+    .skills-section, .experience-section, .education-section, .contact-section,.projects-section { padding: 5rem 2rem; }
     footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
     .contact-links{gap: 0;}
   }
@@ -704,3 +810,5 @@ nav.sticky {
         .contact-item{display: flex; flex-direction: column; text-align: center;}
         .skills-grid{grid-template-columns: 1fr; gap: 0;}
   }
+
+  
